@@ -1,0 +1,29 @@
+create table schedule(
+	no number primary key,
+	event_date date,
+	event_content varchar2(200)
+);
+
+create sequence seq_schedule;
+
+insert into schedule values(seq_schedule.nextval, 
+							to_date('2023/05/01', 'yyyy/mm/dd'),
+							'새벽강변마라톤대회');
+
+							
+2023/05 월에 스케줄이 있는 
+날을 조회 해 봅니다.
+
+select distinct to_char(event_date, 'dd')
+from schedule 
+where to_char(event_date, 'yyyy/mm') = '2023/05';
+
+
+
+
+
+
+
+
+
+
